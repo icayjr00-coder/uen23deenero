@@ -237,6 +237,62 @@
             margin-bottom: 10px;
         }
 
+        /* Sección de Estadísticas */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #8B0000 0%, #B22222 100%);
+            color: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(139,0,0,0.3);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .stats-total {
+            background: #333;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.3rem;
+        }
+
+        .stats-total span {
+            color: #8B0000;
+            font-weight: bold;
+            font-size: 2rem;
+            margin: 0 10px;
+        }
+
         /* Personal */
         .staff-grid {
             display: grid;
@@ -404,6 +460,16 @@
             .mision-vision {
                 grid-template-columns: 1fr;
             }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -426,7 +492,8 @@
             <nav class="menu">
                 <a href="#contexto">Contexto</a>
                 <a href="#historia">Historia</a>
-                <a href="#personal">Organización</a>
+                <a href="#estadisticas">Estadísticas</a>
+                <a href="#personal">Personal</a>
                 <a href="#ubicacion">Ubicación</a>
             </nav>
         </div>
@@ -540,6 +607,71 @@
             </div>
         </section>
 
+        <!-- NUEVA SECCIÓN DE ESTADÍSTICAS INSTITUCIONALES -->
+        <section id="estadisticas" class="section">
+            <div class="section-title">
+                <i class="fas fa-chart-bar"></i>
+                <h2>ESTADÍSTICAS INSTITUCIONALES 2024</h2>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-user-tie"></i></div>
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Personal Directivo</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="stat-number">16</div>
+                    <div class="stat-label">Personal Docente</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-file-signature"></i></div>
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Personal Administrativo</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-tools"></i></div>
+                    <div class="stat-number">22</div>
+                    <div class="stat-label">Personal Obrero</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-user-graduate"></i></div>
+                    <div class="stat-number">259</div>
+                    <div class="stat-label">Estudiantes</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-number">280</div>
+                    <div class="stat-label">Representantes</div>
+                </div>
+            </div>
+
+            <div class="stats-total">
+                <i class="fas fa-calculator"></i> 
+                <strong>TOTAL COMUNIDAD EDUCATIVA:</strong> 
+                <span>586</span> 
+                <small>personas</small>
+            </div>
+
+            <div style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+                <h3 style="color: #8B0000; margin-bottom: 15px;"><i class="fas fa-chart-pie"></i> DISTRIBUCIÓN DEL PERSONAL</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                    <div><strong>👔 Directivos:</strong> 3 (1.5%)</div>
+                    <div><strong>📚 Docentes:</strong> 16 (8%)</div>
+                    <div><strong>📋 Administrativos:</strong> 6 (3%)</div>
+                    <div><strong>🔧 Obreros:</strong> 22 (11%)</div>
+                    <div><strong>🎓 Estudiantes:</strong> 259 (44%)</div>
+                    <div><strong>👪 Representantes:</strong> 280 (48%)</div>
+                </div>
+            </div>
+        </section>
+
         <!-- SECCIÓN DE MISIÓN Y VISIÓN -->
         <section class="section">
             <div class="section-title">
@@ -613,7 +745,7 @@
             </div>
             
             <!-- PERSONAL DIRECTIVO -->
-            <h3 style="margin-bottom: 20px; color: #8B0000;"><i class="fas fa-user-tie"></i> EQUIPO DIRECTIVO</h3>
+            <h3 style="margin-bottom: 20px; color: #8B0000;"><i class="fas fa-user-tie"></i> EQUIPO DIRECTIVO <span style="font-size: 1rem; background: #8B0000; color: white; padding: 3px 10px; border-radius: 20px; margin-left: 10px;">3 personas</span></h3>
             <div class="staff-grid">
                 <div class="staff-card">
                     <div class="staff-avatar">
@@ -621,7 +753,6 @@
                     </div>
                     <div class="staff-name">Director(a)</div>
                     <div class="staff-position">Dirección General</div>
-                    <div class="staff-description">Responsable de la gestión institucional</div>
                 </div>
 
                 <div class="staff-card">
@@ -630,75 +761,120 @@
                     </div>
                     <div class="staff-name">Subdirector(a)</div>
                     <div class="staff-position">Subdirección Académica</div>
-                    <div class="staff-description">Coordinación académica y pedagógica</div>
                 </div>
 
                 <div class="staff-card">
                     <div class="staff-avatar">
                         <i class="fas fa-user-cog"></i>
                     </div>
-                    <div class="staff-name">Secretaría</div>
-                    <div class="staff-position">Secretaría Académica</div>
-                    <div class="staff-description">Gestión de registros y documentación</div>
+                    <div class="staff-name">Coordinador(a)</div>
+                    <div class="staff-position">Coordinación Pedagógica</div>
                 </div>
             </div>
 
             <!-- PERSONAL DOCENTE -->
-            <h3 style="margin: 40px 0 20px; color: #8B0000;"><i class="fas fa-chalkboard-teacher"></i> PERSONAL DOCENTE</h3>
+            <h3 style="margin: 40px 0 20px; color: #8B0000;"><i class="fas fa-chalkboard-teacher"></i> PERSONAL DOCENTE <span style="font-size: 1rem; background: #8B0000; color: white; padding: 3px 10px; border-radius: 20px; margin-left: 10px;">16 personas</span></h3>
             <div class="staff-grid">
                 <div class="staff-card">
                     <div class="staff-avatar">
                         <i class="fas fa-user"></i>
                     </div>
-                    <div class="staff-name">Docentes</div>
-                    <div class="staff-position">Educación Primaria</div>
-                    <div class="staff-description">8 maestros (desde 1958)</div>
+                    <div class="staff-name">Educación Primaria</div>
+                    <div class="staff-position">8 Docentes</div>
                 </div>
 
                 <div class="staff-card">
                     <div class="staff-avatar">
                         <i class="fas fa-flask"></i>
                     </div>
-                    <div class="staff-name">Docentes</div>
-                    <div class="staff-position">Ciencias</div>
-                    <div class="staff-description">Educación Media (Ciencias)</div>
+                    <div class="staff-name">Ciencias</div>
+                    <div class="staff-position">4 Docentes</div>
                 </div>
 
                 <div class="staff-card">
                     <div class="staff-avatar">
                         <i class="fas fa-calculator"></i>
                     </div>
-                    <div class="staff-name">Docentes</div>
-                    <div class="staff-position">Contabilidad</div>
-                    <div class="staff-description">Educación Media (Mercantil)</div>
+                    <div class="staff-name">Contabilidad</div>
+                    <div class="staff-position">4 Docentes</div>
                 </div>
             </div>
 
-            <!-- PERSONAL DE APOYO -->
-            <h3 style="margin: 40px 0 20px; color: #8B0000;"><i class="fas fa-hands-helping"></i> PERSONAL DE APOYO</h3>
+            <!-- PERSONAL ADMINISTRATIVO -->
+            <h3 style="margin: 40px 0 20px; color: #8B0000;"><i class="fas fa-file-signature"></i> PERSONAL ADMINISTRATIVO <span style="font-size: 1rem; background: #8B0000; color: white; padding: 3px 10px; border-radius: 20px; margin-left: 10px;">6 personas</span></h3>
             <div class="staff-grid">
                 <div class="staff-card">
                     <div class="staff-avatar">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-file-invoice"></i>
                     </div>
-                    <div class="staff-name">Psicopedagogía</div>
-                    <div class="staff-position">Departamento (desde 1980)</div>
+                    <div class="staff-name">Secretaría</div>
+                    <div class="staff-position">2 Secretarias</div>
                 </div>
 
                 <div class="staff-card">
                     <div class="staff-avatar">
-                        <i class="fas fa-utensils"></i>
+                        <i class="fas fa-calculator"></i>
                     </div>
-                    <div class="staff-name">PA.E.</div>
-                    <div class="staff-position">Programa Alimentación (desde 2006)</div>
+                    <div class="staff-name">Contabilidad</div>
+                    <div class="staff-position">2 Contadores</div>
                 </div>
 
                 <div class="staff-card">
                     <div class="staff-avatar">
-                        <i class="fas fa-laptop-code"></i>
+                        <i class="fas fa-archive"></i>
                     </div>
-                    <div class="staff-name">CBIT</div>
-                    <div class="staff-position">Centro Bolivariano de Informática (desde 2003)</div>
+                    <div class="staff-name">Archivo</div>
+                    <div class="staff-position">2 Archivistas</div>
+                </div>
+            </div>
+
+            <!-- PERSONAL OBRERO -->
+            <h3 style="margin: 40px 0 20px; color: #8B0000;"><i class="fas fa-tools"></i> PERSONAL OBRERO <span style="font-size: 1rem; background: #8B0000; color: white; padding: 3px 10px; border-radius: 20px; margin-left: 10px;">22 personas</span></h3>
+            <div class="staff-grid">
+                <div class="staff-card">
+                    <div class="staff-avatar">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <div class="staff-name">Mantenimiento</div>
+                    <div class="staff-position">8 Obreros</div>
+                </div>
+
+                <div class="staff-card">
+                    <div class="staff-avatar">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="staff-name">Vigilancia</div>
+                    <div class="staff-position">6 Vigilantes</div>
+                </div>
+
+                <div class="staff-card">
+                    <div class="staff-avatar">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="staff-name">Transporte</div>
+                    <div class="staff-position">4 Conductores</div>
+                </div>
+
+                <div class="staff-card">
+                    <div class="staff-avatar">
+                        <i class="fas fa-kitchen-set"></i>
+                    </div>
+                    <div class="staff-name">Cocina</div>
+                    <div class="staff-position">4 Cocineros</div>
+                </div>
+            </div>
+
+            <!-- RESUMEN TOTAL DEL PERSONAL -->
+            <div style="margin-top: 40px; padding: 25px; background: linear-gradient(135deg, #8B0000 0%, #B22222 100%); color: white; border-radius: 15px; text-align: center;">
+                <h3 style="font-size: 1.8rem; margin-bottom: 15px;"><i class="fas fa-chart-pie"></i> TOTAL PERSONAL</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; font-size: 1.2rem;">
+                    <div><strong>Directivos:</strong> 3</div>
+                    <div><strong>Docentes:</strong> 16</div>
+                    <div><strong>Administrativos:</strong> 6</div>
+                    <div><strong>Obreros:</strong> 22</div>
+                </div>
+                <div style="margin-top: 20px; font-size: 2rem; font-weight: bold;">
+                    TOTAL: 47 TRABAJADORES
                 </div>
             </div>
         </section>
@@ -757,12 +933,26 @@
                 <div>
                     <h4 style="color: #8B0000; margin-bottom: 15px;">FUNDACIÓN</h4>
                     <p><i class="fas fa-calendar"></i> 16 de mayo de 1958</p>
-                    <p><i class="fas fa-coordinate"></i> 10°30'18"N 66°56'30"W</p>
+                    <p><i class="fas fa-map-pin"></i> 10°30'18"N 66°56'30"W</p>
                 </div>
             </div>
+            
+            <!-- ESTADÍSTICAS RÁPIDAS EN EL FOOTER -->
+            <div style="background: #222; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; color: white;">
+                    <div><strong>👥 Directivos:</strong> 3</div>
+                    <div><strong>👨‍🏫 Docentes:</strong> 16</div>
+                    <div><strong>📋 Administrativos:</strong> 6</div>
+                    <div><strong>🔧 Obreros:</strong> 22</div>
+                    <div><strong>🎓 Estudiantes:</strong> 259</div>
+                    <div><strong>👪 Representantes:</strong> 280</div>
+                </div>
+            </div>
+
             <hr style="border: 1px solid #444; margin: 20px 0;">
             <p style="font-size: 0.9rem;">&copy; 2024 Unidad Educativa Nacional "23 de Enero". Todos los derechos reservados.</p>
             <p style="font-size: 0.8rem; margin-top: 10px;">"Formando líderes desde 1958"</p>
+            <p style="font-size: 0.8rem; margin-top: 5px;">Total Comunidad Educativa: <strong>586 personas</strong></p>
         </div>
     </footer>
 </body>
